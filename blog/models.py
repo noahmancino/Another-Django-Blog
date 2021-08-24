@@ -7,3 +7,6 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'title: {self.title}\ndate: {self.date_posted}\nauthor: {self.author}'
